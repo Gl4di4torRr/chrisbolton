@@ -22,9 +22,9 @@
     "url": "git+https://github.com/Gl4di4torRr/chrisbolton.git"
   },
   "scripts": {
-    "start": "node app",
-    "postinstall": "gulp default"
-  }
+    "build": "gulp",
+    "start": "gulp serve"
+  },
   "description": "",
   "bugs": {
     "url": "https://github.com/Gl4di4torRr/chrisbolton/issues"
