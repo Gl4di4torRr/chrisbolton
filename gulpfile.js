@@ -1,25 +1,16 @@
 var gulp = require('gulp');
 var less = require('gulp-less');
 var browserSync = require('browser-sync').create();
-var header = require('gulp-header');
 var cleanCSS = require('gulp-clean-css');
 var rename = require("gulp-rename");
 var uglify = require('gulp-uglify');
+var connect = require('gulp-connect');
 var pkg = require('./package.json');
-
-// Set the banner content
-var banner = ['/*!\n',
-    ' * Start Bootstrap - <%= pkg.title %> v<%= pkg.version %> (<%= pkg.homepage %>)\n',
-    ' * Copyright 2013-' + (new Date()).getFullYear(), ' <%= pkg.author %>\n',
-    ' */\n',
-    ''
-].join('');
 
 // Compile LESS files from /less into /css
 gulp.task('less', function() {
     return gulp.src('less/creative.less')
         .pipe(less())
-        .pipe(header(banner, { pkg: pkg }))
         .pipe(gulp.dest('css'))
         .pipe(browserSync.reload({
             stream: true
@@ -41,7 +32,6 @@ gulp.task('minify-css', ['less'], function() {
 gulp.task('minify-js', function() {
     return gulp.src('js/creative.js')
         .pipe(uglify())
-        .pipe(header(banner, { pkg: pkg }))
         .pipe(rename({ suffix: '.min' }))
         .pipe(gulp.dest('js'))
         .pipe(browserSync.reload({
@@ -97,7 +87,7 @@ gulp.task('serve', ['browserSync', 'less', 'minify-css', 'minify-js'], function(
 
 gulp.task('serveprod', function() {
     connect.server({
-        root: ["*"],
+        root: './',
         port: process.env.PORT || 5000, // localhost:5000
         livereload: false
     });
