@@ -94,3 +94,11 @@ gulp.task('serve', ['browserSync', 'less', 'minify-css', 'minify-js'], function(
     gulp.watch('*.html', browserSync.reload);
     gulp.watch('js/**/*.js', browserSync.reload);
 });
+
+gulp.task('serveprod', function() {
+    connect.server({
+        root: ["*"],
+        port: process.env.PORT || 5000, // localhost:5000
+        livereload: false
+    });
+});

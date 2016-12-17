@@ -23,7 +23,7 @@
   },
   "scripts": {
     "build": "gulp",
-    "start": "gulp serve"
+    "start": "serveprod"
   },
   "description": "",
   "bugs": {
