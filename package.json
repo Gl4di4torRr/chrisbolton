@@ -19,9 +19,30 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Gl4di4torRr/chrisbolton"
+    "url": "git+https://github.com/Gl4di4torRr/chrisbolton.git"
   },
   "scripts": {
-    "start": "gulp dev"
-  }
+    "start": "gulp serve"
+  },
+  "description": "",
+  "bugs": {
+    "url": "https://github.com/Gl4di4torRr/chrisbolton/issues"
+  },
+  "homepage": "https://github.com/Gl4di4torRr/chrisbolton#readme",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "browser-sync": "^2.18.2",
+    "gulp-clean-css": "^2.1.0",
+    "gulp-header": "^1.8.8",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.5.4",
+    "font-awesome": "^4.7.0",
+    "gulp-less": "^3.3.0",
+    "bootstrap": "^3.3.7",
+    "jquery": "^1.12.4",
+    "scrollreveal": "^3.3.2",
+    "magnific-popup": "^1.1.0"
+  },
+  "license": "ISC"
 }
