@@ -1,7 +1,6 @@
 /*!
- * Start Bootstrap - Creative v3.3.7+1 (http://startbootstrap.com/template-overviews/creative)
- * Copyright 2013-2016 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ * Start Bootstrap - Chris Botlon v1.0.0 ()
+ * Copyright 2013-2016 Christopher Bolton
  */
 html,
 body {
@@ -44,6 +43,9 @@ p {
 }
 .bg-primary {
   background-color: #F05F40;
+}
+.bg-info {
+  background-color: ;
 }
 .bg-dark {
   background-color: #222222;
