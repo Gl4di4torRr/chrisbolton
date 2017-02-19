@@ -6,7 +6,6 @@ var rename = require("gulp-rename");
 var uglify = require('gulp-uglify');
 var connect = require('gulp-connect');
 
-// Compile LESS files from /less into /css
 gulp.task('less', function() {
     return gulp.src('less/creative.less')
         .pipe(less())
@@ -16,7 +15,6 @@ gulp.task('less', function() {
         }))
 });
 
-// Minify compiled CSS
 gulp.task('minify-css', ['less'], function() {
     return gulp.src('css/creative.css')
         .pipe(cleanCSS({ compatibility: 'ie8' }))
@@ -27,7 +25,6 @@ gulp.task('minify-css', ['less'], function() {
         }))
 });
 
-// Minify JS
 gulp.task('minify-js', function() {
     return gulp.src('js/creative.js')
         .pipe(uglify())
@@ -38,7 +35,6 @@ gulp.task('minify-js', function() {
         }))
 });
 
-// Copy vendor libraries from /node_modules into /vendor
 gulp.task('copy', function() {
     gulp.src(['node_modules/bootstrap/dist/**/*', '!**/npm.js', '!**/bootstrap-theme.*', '!**/*.map'])
         .pipe(gulp.dest('vendor/bootstrap'))
@@ -63,10 +59,8 @@ gulp.task('copy', function() {
         .pipe(gulp.dest('vendor/font-awesome'))
 })
 
-// Run everything
 gulp.task('default', ['less', 'minify-css', 'minify-js', 'copy']);
 
-// Configure the browserSync task
 gulp.task('browserSync', function() {
     browserSync.init({
         server: {
@@ -75,7 +69,6 @@ gulp.task('browserSync', function() {
     })
 })
 
-// Dev task with browserSync
 gulp.task('serve', ['browserSync', 'less', 'minify-css', 'minify-js'], function() {
     gulp.watch('less/*.less', ['less']);
     gulp.watch('css/*.css', ['minify-css']);
