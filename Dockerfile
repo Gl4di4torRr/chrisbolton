@@ -15,4 +15,5 @@ RUN npm install
 COPY . /usr/src/app
 
 EXPOSE 5000
-CMD [ "gulp", "serveprod" ]
+
+CMD ["gulp", "serveprod"]
