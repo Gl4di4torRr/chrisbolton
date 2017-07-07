@@ -80,7 +80,7 @@ gulp.task('serve', ['browserSync', 'less', 'minify-css', 'minify-js'], function(
 gulp.task('serveprod', function() {
     connect.server({
         root: './',
-        port: $PORT || process.env.PORT || 5000, // localhost:5000
+        port: process.env.PORT || 5000, // localhost:5000
         livereload: false
     });
 });
