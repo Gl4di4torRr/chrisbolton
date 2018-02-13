@@ -2,8 +2,8 @@
   "name": "chrisbolton",
   "title": "Chris Botlon",
   "version": "1.0.0",
-  "description": "Chris Bolton",
   "main": "gulpfile.js",
+  "description": "Chris Bolton",
   "author": "Christopher Bolton",
   "repository": {
     "type": "git",
@@ -22,7 +22,6 @@
     "url": "https://github.com/Gl4di4torRr/chrisbolton/issues"
   },
   "homepage": "https://github.com/Gl4di4torRr/chrisbolton#readme",
-  "main": "gulpfile.js",
   "dependencies": {
     "gulp": "^3.9.1",
     "browser-sync": "^2.18.2",
