@@ -15,7 +15,7 @@
   },
   "scripts": {
     "build": "gulp",
-    "start": "npm install && gulp serveprod"
+    "start": "gulp serveprod"
   },
   "description": "",
   "bugs": {
