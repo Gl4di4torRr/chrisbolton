@@ -89,8 +89,7 @@ gulp.task('serve', ['browserSync', 'less', 'minify-css', 'minify-js', 'html'], f
 gulp.task('serveprod', function() {
     connect.server({
         root: './',
-        port: process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 5000,
-        ip: process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0',
+        port: process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
         livereload: false
     });
 });
