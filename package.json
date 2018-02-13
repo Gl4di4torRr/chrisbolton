@@ -8,7 +8,7 @@
     "url": "git+https://github.com/Gl4di4torRr/chrisbolton.git"
   },
   "scripts": {
-    "build": "gulp",
+    "build": "npm install",
     "start": "gulp serveprod"
   },
   "description": "",
