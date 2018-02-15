@@ -2,7 +2,7 @@
     "use strict";
 
     $.ajax({
-      url: "http://localhost:8080/blogs",
+      url: "http://chris-bolton-service-chris-bolton-sbx.dev1apps.ocp.delta.com/blogs",
       success: function(blogs) {
 
         blogs.forEach(function(blog) {
