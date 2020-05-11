@@ -1,11 +1,5 @@
 
-FROM node:latest
-
-RUN npm install -g gulp
-
-# Create app directory
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
+FROM nginx:stable
 
 # Install app dependencies
 COPY package.json /usr/src/app/

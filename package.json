@@ -2,7 +2,6 @@
   "name": "chrisbolton",
   "title": "Chris Botlon",
   "version": "1.0.0",
-  "main": "gulpfile.js",
   "description": "",
   "author": "Christopher Bolton",
   "repository": {
@@ -13,10 +12,6 @@
     "node": "*",
     "npm": "*"
   },
-  "scripts": {
-    "build": "gulp",
-    "start": "gulp serveprod"
-  },
   "bugs": {
     "url": "https://github.com/Gl4di4torRr/chrisbolton/issues"
   },
@@ -26,14 +21,6 @@
     "browser-sync": "^2.18.2",
     "express": "^4.13.3",
     "font-awesome": "^4.7.0",
-    "gulp": "^3.9.1",
-    "gulp-clean-css": "^2.1.0",
-    "gulp-connect": "^5.0.0",
-    "gulp-header": "^1.8.8",
-    "gulp-html": "^0.4.7",
-    "gulp-less": "^3.3.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-uglify": "^1.5.4",
     "jquery": "^1.12.4",
     "magnific-popup": "^1.1.0",
     "node-gyp": "^3.6.2",
