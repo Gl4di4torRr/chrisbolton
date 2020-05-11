@@ -21,7 +21,7 @@
     "browser-sync": "^2.18.2",
     "express": "^4.13.3",
     "font-awesome": "^4.7.0",
-    "jquery": "^1.12.4",
+    "jquery": "^3.5.1",
     "magnific-popup": "^1.1.0",
     "node-gyp": "^3.6.2",
     "scrollreveal": "^3.3.2"
