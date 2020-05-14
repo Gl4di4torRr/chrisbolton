@@ -23,5 +23,4 @@ ADD less /var/www/less
 ADD package.json /var/www
 
 # Install dependencies
-RUN cd /var/www && \
-    npm install
+RUN npm install --prefix /var/www

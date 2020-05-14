@@ -11,12 +11,14 @@
 
     <title>Chris Bolton</title>
 
+    <!-- Include CSS -->
     <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="node_modules/font-awesome/dist/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link href="node_modules/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet'>
     <link href="node_modules/magnific-popup/dist/magnific-popup.css" rel="stylesheet">
     <link href="css/creative.css" rel="stylesheet">
+    <link href="css/timeline.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -47,6 +49,9 @@
                         <a class="page-scroll" href="#journey">Journey</a>
                     </li>
                     <li>
+                        <a class="page-scroll" href="#presentations">Presentations</a>
+                    </li>
+                    <li>
                         <a class="page-scroll" href="#skills">Technologies</a>
                     </li>
                     <li>
@@ -62,7 +67,7 @@
             <div class="header-content-inner">
                 <h2 id="homeHeading">Always Stay Curious</h2>
                 <hr>
-                <a href="#about" class="btn btn-primary btn-xl page-scroll">About Me<!doctype html>
+                <a href="#about" class="btn btn-primary btn-xl page-scroll">About<!doctype html>
                     <html lang="en">
                     <head>
                         <meta charset="UTF-8">
@@ -83,10 +88,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">About me</h2>
+                    <h2 class="section-heading">About</h2>
                     <hr class="light">
                     <p class="text-faded">
-                        Some text...
+                        I am a graduate from the University of Georgia where I studied Computer Science and Mathematics.
+                        During my studies at the University of Georgia, I learned fundamental computer science skills,
+                        such as object oriented programming, networking, databases, etc. Now, I have six years of professional
+                        experience where I have done application development, solution architecture and led engineers
+                        from planning, design, implementation, testing and through to production. I enjoy taking on new
+                        challenges and engineering solutions that improve my customers experience and satisfaction.
                     </p>
                     <a href="#journey" class="page-scroll btn btn-default btn-xl sr-button">Journey</a>
                 </div>
@@ -96,35 +106,252 @@
 
     <section id="journey">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Journey</h2>
-                    <hr class="primary">
-                </div>
+            <div class="page-header text-center">
+                <h1 id="timeline">Journey</h1>
             </div>
+            <ul class="timeline">
+                <li>
+                    <div class="timeline-badge"><img src="img/delta.jpg" alt="Delta Air Lines"></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4 class="timeline-title"><b>Senior Systems Engineer</b></h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p>
+                                <br>
+                                <b>2020:</b>
+                                <br>
+
+                                I lead the Cloud App Dev team which develops features and supports application teams at
+                                Delta Air Lines on Red Hat's OpenShift container platform. I develop cloud
+                                best practices, documentation and help Delta maintain a Cloud Native and vendor neutral
+                                position.
+
+                                <br><br>
+
+                                I worked on right sizing applications. In the OpenShift 3.X environment, we gave
+                                application namespaces T-Shirt sizing for the amount of memory and CPU they would receive
+                                for all their Pods. In order to save Delta money, we wanted to right size each application
+                                namespace. I worked on new automation called GitOps which used a git workflow to apply objects
+                                to an OpenShift cluster. The GitOps workflow allowed for customization and automation for
+                                each application and portfolio. The tools we used were git, ansible, ansible tower, gitlab ci
+                                and the oc cli.
+
+                                <br><br>
+                                <b>2019:</b>
+                                <br>
+
+                                I worked on the onboarding operator. We wanted the OpenShift
+                                sandbox environment to be a place where application developers could
+                                innovate and learn without the friction of opening a ticket for
+                                a personal sandbox. The onboarding operator was created to look
+                                for users logging into the sandbox cluster. When a user logs into
+                                the sandbox cluster, the onboarding operator creates a personal sandbox with
+                                12GB of memory, 2 CPU and 5GB of storage for the developer to use for
+                                innovation and any kind of personal use. The onboarding operator was
+                                written in Go and interacts with the Kubernetes API.
+
+                                I worked on onboarding a new certificate management process: cert manager.
+                                The cert manager was a growing operator in the Kubernetes spaces and we decided
+                                to onboard this operator as the solution for Delta on OpenShift. Cert Manager
+                                worked with Venafi to add Venafi as an issuer for the cert manager. We created the
+                                documentation and CI for customers to use the new process and for the team
+                                to deploy the cert manager throughout the environment
+
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-badge"><img src="img/delta.jpg" alt="The Home Depot"></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4 class="timeline-title"><b>Systems Engineer</b></h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p>
+                                <br>
+                                <b>2018:</b>
+                                <br>
+
+                                The container adoption team began and Delta started it's journey towards
+                                containerizing application. We decided to use Red Hat's OpenShift Container
+                                Platform as Delta's PaaS environment. I worked with three pilot application
+                                teams and as we onboarded the three applications, I developed the onboarding
+                                process for future application teams. I developed application quickstarts,
+                                Jenkins shared libraries and some easy buttons to help developers onboard
+                                more quickly and easily.
+                                <br><br>
+                                The container adoption program turned into the Delta PaaS team
+                                where I began to lead the application developer side of the team. The Delta
+                                PaaS team was composed of Infrastructure Engineers and App Dev Engineers. We
+                                continued to improve documentation and automation while there was an ongoing
+                                application modernization effort going on at Delta. I worked with the App Mod
+                                team to help them onboard fifty application onto the OpenShift environment.
+                                <br><br>
+                                Every application that onboarded to the platform needed to be secured at the "edge".
+                                We developed a kubernetes operator called cert operator that allowed application teams
+                                to place their OpenShift route into a "need" state which triggered the cert operator
+                                to retrieve a certificate from Delta's cert store (Venafi) and apply the certificate to
+                                a route. We created an automated renewal process and automated keystore's as well.
+
+
+                                <br>
+                                <br>
+                                <b>2017:</b>
+                                <br>
+                                I worked on the development tools team where I began to onboard new tools into Delta's
+                                environment. Delta was using clearcase with home grown build, storing and deployment tools:
+                                RET, RET DEPOT and RET Deploy. We began conversations with different vendors to onboard the new
+                                tools. We decided on Gitlab for our code repository, Nexus for the binary store, Jenkins for
+                                the CI system, Sonarqube for static code analysis and Slack for chatops. I worked on the
+                                logical, physical and conceptual diagrams for each new tool and presented them to Delta's
+                                architecture review board. After the tools were stood up, I worked on training the development
+                                community on the new tools, how to use them and the best practices.
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-badge"><img src="img/thd.jpg" alt="The Home Depot"></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4 class="timeline-title"><b>Senior Software Engineer</b></h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p>
+                                <br>
+                                <b>2016:</b>
+                                <br>
+                                I worked on an application team in Home Depot's merchandise department.
+                                I worked on an application called Supplier Onboarding. This application allowed
+                                Home Depot merchant to onboard new vendors and new products. The Home Depot
+                                merchant would create a contract with a vendor (Black and Decker, etc.) and the
+                                contract would be signed, processed, and stored using the Supplier Onboarding
+                                application. The technologies were HTML, AngularJS and CSS for the presentation layer,
+                                JAVA for the RESTful service layer and DB2 for the database. I worked on developing
+                                a single view for merchants so that the merchant could easily access existing contracts
+                                and compare contracts. The feature helped save merchants time and energy comparing existing
+                                contracts to new contracts. Also, I worked on writing end to end tests using Protractor so
+                                that when we did future development, we would know which test cases were broken before shipping
+                                the presentation layer to production. Home Depot adopted a new CI system during this time
+                                as well: Concourse CI. I worked to develop an end to end CI system for this application. That is,
+                                build, package, test, scan, and deploy the application. The pipeline was triggered on every git commit
+                                and it gave the team quick visibility into the health of the application.
+
+
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-badge"><img src="img/thd.jpg" alt="The Home Depot"></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4 class="timeline-title"><b>IT Software Engineer II</b></h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p>
+                                <br>
+                                <b>2015:</b>
+                                <br>
+                                I worked on a project called Data Source Simplification (DSS) or Tomcat Grid
+                                Identity Management project. The DSS project created a workflow for data sources
+                                to be automatically created without human intervention or a workflow that only
+                                required leadership and a lead DB engineer to approve the data source. The two
+                                scenarios were different depending on the database. This project spanned multiple
+                                areas of Home Depot: security, architecture, database management, etc. Customers
+                                would go through the One Click Deploy Eclipse Plug-in to deploy their application
+                                to Home Depot's Grid. I created a new page in the workflow where the customer could
+                                choose their database (DB2, Cassandra, etc.) and request a data source for their application.
+                                The customer (developer) would then click "Deploy" and the request for a data source would be triggered
+                                to a RESTful interface, approvals would be triggered (if needed), etc. The customer could
+                                check on the status of the Data Source as it went through the workflow process. For the fully
+                                automated workflow data sources, the application would be deployed and the data source would be
+                                attached to the application immediately. I used a number of different tools and technologies
+                                to enable this workflow.
+
+                                <br>
+
+                                I worked on onboarding new development tools to the Home Depot environment. GitHub Enterprise
+                                for Home Depot's code repository and JFrog Artifactory for Home Depot's binaries.
+                                I worked along side my management to architect and build the systems.
+
+                                <br>
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-badge"><img src="img/thd.jpg" alt="The Home Depot"></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4 class="timeline-title"><b>IT Software Engineer</b></h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p>
+                                <br>
+                                <b>2014:</b>
+                                <br>
+                                I worked on the Application Platform and Development Tools team. I was primarily responsible for
+                                The Home Depot's Eclipse and Eclipse Plug-in development. Home Depot has an internal hosting
+                                platform called the Grid. I worked on an Eclipse Plug-in called One Click Deploy which allowed
+                                Developers to Deploy their applications to the Grid.
+                                One Click Deploy interacted with a number of different systems: subversion, IBM MQ, Opsware, ServiceNow etc.
+                                The technologies we used were Java with the Eclipse Plugin Development Platform. The developers
+                                were able to right click their project, go to one click deploy, choose the development lifecycle:
+                                DEV, QA, PRD and deploy their application. One Click Deploy allowed multiple different types of deployments
+                                depending on the application requirements: Store, Bastion, etc.
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-badge"><img src="img/thd.jpg" alt="The Home Depot"></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4 class="timeline-title"><b>Software Engineer Intern</b></h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p>
+                                <br>
+                                <b>Summer 2013:</b>
+                                <br>
+                                Home Depot has an internal application platform called the Grid. The Grid primarily serves Java applications using
+                                Tomcat. Every day there was a report on the status of the applications on the Grid. The report went out as a PDF
+                                to the leadership team. I made a RESTful service layer (JAVA, JAX-RS, etc.) which connected to a Cassandra
+                                Database (already present) and a Presentation Layer (HTML5, CSS, Javascript, Ajax, etc.) to display the Grid
+                                in real time We called the application GridStats and I was able to demo the application to my Vice President
+                                at the end of my internship.
+                            </p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
         </div>
-        <div class="container">
+    </section>
+
+    <section id="presentations">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-md-4 text-center">
-                    <div>
-                        <img src="img/thd.jpg">
-                        <h3>Software Engineering Intern</h3>
-                    </div>
-                </div>
-                <div class="col-md-4 text-center">
-                    <div>
-                        <img src="img/thd.jpg">
-                        <h3>Software Engineer</h3>
-                    </div>
-                </div>
-                <div class="col-md-4 text-center">
-                    <div>
-                        <img src="img/thd.jpg">
-                        <h3>Senior Software Engineer</h3>
-                    </div>
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">Presentations</h2>
                 </div>
             </div>
-            <a href="#skills" class="page-scroll btn btn-default btn-xl sr-button">Skills</a>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h3>Gitlab Commit London 2019</h3>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/veH4wVDCUkA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h3>Gitlab Commit Brooklyn 2019</h3>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/8jj-EPEn_lk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h3>Nexus User Conference 2018</h3>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/bkASHy0Our8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -132,18 +359,18 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">Skills</h2>
+                    <h2 class="section-heading">Technologies</h2>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6 text-center">
                     <div>
                         <ul style="list-style: none;">
-                            <li><h3>Java</h3></li>
-                            <li><h3>JavaScript (AngularJS, JQuery)</h3></li>
-                            <li><h3>HTML <i class="fa fa-html5" aria-hidden="true"></i></h3></li>
-                            <li><h3>CSS <i class="fa fa-css3" aria-hidden="true"></i></h3></li>
-                            <li><h3>SQL</h3></li>
+                            <li><h3>Java - Spring, Quarkus</h3></li>
+                            <li><h3>JavaScript - AngularJS, JQuery </h3></li>
+                            <li><h3>HTML5</h3></li>
+                            <li><h3>CSS</h3></li>
+                            <li><h3>SQL - MySQL, Postgresql, DB2</h3></li>
                         </ul>
                     </div>
                 </div>
@@ -151,10 +378,10 @@
                     <div>
                         <ul style="list-style: none;">
                             <li><h3>Bash</h3></li>
-                            <li><h3>Linux <i class="fa fa-linux" aria-hidden="true"></i></h3></li>
+                            <li><h3>Linux - RHEL, Centos, Ubuntu</h3></li>
                             <li><h3>Docker</h3></li>
-                            <li><h3>NPM</h3></li>
-                            <li><h3>Gulp</h3></li>
+                            <li><h3>Package Management - Gradle, Maven, npm</h3></li>
+                            <li><h3>Golang</h3></li>
                         </ul>
                     </div>
                 </div>
@@ -164,22 +391,22 @@
             <div class="col-md-6 text-center">
                 <div>
                     <ul style="list-style: none;">
-                        <li><h3>GitHub <i class="fa fa-github" aria-hidden="true"></i></h3></li>
-                        <li><h3>Eclipse</h3></li>
-                        <li><h3>Intellij</h3></li>
-                        <li><h3>Artifactory</h3></li>
-                        <li><h3>Jenkins</h3></li>
+                        <li><h3>Git - Github, Gitlab <i class="fa fa-github" aria-hidden="true"></i></h3></li>
+                        <li><h3>IDE - Eclipse, Intellij</h3></li>
+                        <li><h3>Red Hat OpenShift</h3></li>
+                        <li><h3>Binary Store - Artifactory, Nexus</h3></li>
+                        <li><h3>CI/CD -Jenkins, Concourse, Tekton</h3></li>
                     </ul>
                 </div>
             </div>
             <div class="col-md-6 text-center">
                 <div>
                     <ul style="list-style: none;">
-                        <li><h3>Agile</h3></li>
+                        <li><h3>12 Factor Development</h3></li>
                         <li><h3>Extreme Programming</h3></li>
-                        <li><h3>Subversion</h3></li>
+                        <li><h3>Ansible</h3></li>
                         <li><h3>Heroku</h3></li>
-                        <li><h3>Tomcat</h3></li>
+                        <li><h3>Middleware - Tomcat, JBoss, etc</h3></li>
                     </ul>
                 </div>
             </div>
@@ -190,7 +417,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">Contact Me!</h2>
+                    <h2 class="section-heading">Contact</h2>
                     <hr class="primary">
                     <p>Would you like to learn more about me?</p>
                 </div>
@@ -203,29 +430,20 @@
                     <i class="fa fa-linkedin fa-3x" aria-hidden="true"></i>
                     <p><a href="https://www.linkedin.com/in/gl4di4torrr/">LinkedIn</a></p>
                 </div>
-
-            </div>
-            <div class="row">
                 <div class="col-lg-4 text-center">
                     <i class="fa fa-stack-overflow fa-3x" aria-hidden="true"></i>
                     <p><a href="http://stackoverflow.com/users/3896997/chris-bolton">Stack Overflow</a></p>
                 </div>
-                <div class="col-lg-4 text-center">
-                    <i class="fa fa-github fa-3x" aria-hidden="true"></i>
-                    <p><a href="https://github.com/Gl4di4torRr">GitHub</a></p>
-                </div>
-                <div class="col-lg-4 text-center">
-                    <i class="fa fa-link fa-3x" aria-hidden="true"></i>
-                    <p><a href="https://hub.docker.com/r/gl4di4torrr/">Docker Hub</a></p>
-                </div>
+
             </div>
         </div>
     </section>
 
+    <!-- Include JavaScript -->
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="node_modules/scrollreveal/dist/scrollreveal.min.js"></script>
+    <script src="node_modules/scrollreveal/dist/scrollreveal.js"></script>
     <script src="node_modules/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
     <script src="js/creative.js"></script>
 

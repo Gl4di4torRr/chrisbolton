@@ -1,31 +1,6 @@
 (function($) {
     "use strict";
 
-    $.ajax({
-      url: "http://chris-bolton-service-chris-bolton-sbx.dev1apps.ocp.delta.com/blogs",
-      success: function(blogs) {
-
-        blogs.forEach(function(blog) {
-            $("#blogs").append(
-                                "<div class=\"panel\" style=\"background-color: rgba(0, 0, 0, .4);\">" +
-                                    "<div class=\"panel-heading\">" +
-                                        "<h3 class=\"panel-title\">" +
-                                            blog.title +
-                                            "<span class=\"pull-right clickable\"><i class=\"glyphicon glyphicon-minus\"></i></span>" +
-                                        "</h3>" +
-                                    "</div>" +
-                                    "<div class=\"panel-body\">" +
-                                        blog.content +
-                                    "</div>" +
-                                "</div>"
-                             );
-        });
-      },
-      error: function(data) {
-        $("#blogs").append("<h1>Uh oh... my blog is currently unavailable.</h1>")
-      }
-    });
-
     $('a.page-scroll').bind('click', function(event) {
         var $anchor = $(this);
         $('html, body').stop().animate({
