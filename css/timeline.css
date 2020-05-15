@@ -136,3 +136,26 @@ padding-left:90px;
 .timeline-body > p + p {
   margin-top: 5px;
 }
+
+@media (max-width: 768px) {
+
+.timeline > li > .timeline-panel {
+  width: 100%;
+  float: center;
+  border: 1px solid #d4d4d4;
+  border-radius: 2px;
+  padding: 20px;
+  position: relative;
+  -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+}
+
+.timeline > li > .timeline-badge {
+    visibility: hidden;
+}
+
+.timeline:before {
+  visibility: hidden;
+}
+
+}
