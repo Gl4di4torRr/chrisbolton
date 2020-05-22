@@ -11,6 +11,8 @@ RUN mkdir /var/www
 
 RUN mkdir -p /etc/letsencrypt/live/certs
 
+RUN mkdir -p /etc/letsencrypt/archive
+
 # Copy a configuration file from the current directory
 ADD nginx.conf /etc/nginx/
 
