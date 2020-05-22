@@ -9,6 +9,8 @@ RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
 
 RUN mkdir /var/www
 
+RUN mkdir /etc/letsencrypt/live/thechrisbolton.com
+
 # Copy a configuration file from the current directory
 ADD nginx.conf /etc/nginx/
 
