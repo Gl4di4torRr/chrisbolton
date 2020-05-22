@@ -12,6 +12,8 @@ RUN mkdir /var/www
 # Copy a configuration file from the current directory
 ADD nginx.conf /etc/nginx/
 
+ADD options-ssl-nginx.conf /etc/letsencrypt
+
 # Add static content
 ADD index.html /var/www
 ADD css /var/www/css
