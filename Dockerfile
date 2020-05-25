@@ -7,14 +7,15 @@ RUN rm -v /etc/nginx/nginx.conf
 RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
     apt install -y nodejs
 
+# Create Directory for static content
 RUN mkdir /var/www
+
+# Create directories for certificate
 RUN mkdir -p /etc/letsencrypt/live/thechrisbolton.com
 RUN mkdir -p /etc/letsencrypt/archive
 
 # Copy a configuration file from the current directory
 ADD nginx.conf /etc/nginx/
-
-ADD options-ssl-nginx.conf /etc/letsencrypt
 
 # Add static content
 ADD index.html /var/www
