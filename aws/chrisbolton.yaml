@@ -1,0 +1,61 @@
+
+Resources:
+
+  #Create the EC2 instance that will serve chris bolton
+  ChrisBoltonEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-0323c3dd2da7fb37d
+      SecurityGroupIds: [ { "Fn::GetAtt": [ "ChrisBoltonSecurityGroup", "GroupId" ] } ]
+      InstanceType: t2.nano
+      AvailabilityZone: us-east-1a
+      UserData:
+        Fn::Base64: !Sub |
+          #!/bin/bash
+          yum update -y
+          yum install -y docker
+
+  # Create the Elastic IP address for chris bolton
+  ChrisBoltonEIP:
+    Type: AWS::EC2::EIP
+    Properties:
+      Domain: vpc
+
+  # Assosciate Elastic IP with EC2 Instance
+  IPAssoc:
+    Type: AWS::EC2::EIPAssociation
+    Properties:
+      InstanceId: !Ref EC2Instance
+      EIP: !Ref ChrisBoltonEIP
+
+  # Create new VPC for EC2 instance
+  VPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: 172.31.0.0/16
+
+  # Create the Security Group for the EC2 instance with ingress and egress rules
+  ChrisBoltonSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Security Group for chrisbolton
+      GroupName: chrisbolton
+      SecurityGroupIngress: [{
+        IpProtocol: tcp,
+        FromPort: 80,
+        ToPort: 80,
+        CidrIp: 0.0.0.0/0
+      },
+      {
+        IpProtocol: tcp,
+        FromPort: 443,
+        ToPort: 443,
+        CidrIp: 0.0.0.0/0
+      },
+      {
+        IpProtocol: tcp,
+        FromPort: 22,
+        ToPort: 22,
+        CidrIp: 0.0.0.0/0
+      }]
+      VpcId: !Ref VPC
