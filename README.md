@@ -30,7 +30,7 @@ This assumes you have created a certificate at `/etc/letsencrypt/live/thechrisbo
 `certbot`.
 
 ```
-_docker run -p 80:80_ \
+docker run -p 80:80 \
            -p 443:443 \
            -v /etc/letsencrypt/live/thechrisbolton.com/:/etc/letsencrypt/live/thechrisbolton.com \
            -v /etc/letsencrypt/archive/:/etc/letsencrypt/archive \
