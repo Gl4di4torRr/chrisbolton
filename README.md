@@ -30,10 +30,15 @@ This assumes you have created a certificate at `/etc/letsencrypt/live/thechrisbo
 `certbot`.
 
 ```
-docker run -p 80:80 \
+docker run --restart "unless-stopped"
+		   -p 80:80 \
            -p 443:443 \
            -v /etc/letsencrypt/live/thechrisbolton.com/:/etc/letsencrypt/live/thechrisbolton.com \
            -v /etc/letsencrypt/archive/:/etc/letsencrypt/archive \
            --name chrisbolton \
            -d quay.io/gl4di4torrr/chrisbolton:latest
 ```
+
+### Logical Architecture Diagram
+
+![](img/chrisbolton_arch.png)

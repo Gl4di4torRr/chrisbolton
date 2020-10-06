@@ -1,0 +1,61 @@
+  
+Resources:
+
+  ChrisBoltonEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-0323c3dd2da7fb37d
+      InstanceType: t2.nano
+      AvailabilityZone: us-east-1a
+      UserData:
+        Fn::Base64: !Sub |
+          #!/bin/bash
+          yum update -y
+          yum install -y docker
+          service start docker
+          systemctl enable docker
+          mkdir -p /etc/letsencrypt/live/thechrisbolton.com
+          mkdir -p /etc/letsencrypt/archive
+
+  ChrisBoltonEIP:
+    Type: AWS::EC2::EIP
+    Properties:
+      Domain: vpc
+
+  IPAssoc:
+    Type: AWS::EC2::EIPAssociation
+    Properties:
+      InstanceId: !Ref ChrisBoltonEC2Instance
+      EIP: !Ref ChrisBoltonEIP
+
+  startec2:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: lambda_function.lambda_handler
+      Runtime: python3.7
+      CodeUri: .
+      Description: ''
+      MemorySize: 128
+      Timeout: 10
+      Role: 'arn:aws:iam::251353084235:role/startstop'
+      Events:
+        Schedule1:
+          Type: Schedule
+          Properties:
+            Schedule: cron(0 12 * * ? *)
+
+  stopec2:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: lambda_function.lambda_handler
+      Runtime: python3.7
+      CodeUri: .
+      Description: ''
+      MemorySize: 128
+      Timeout: 10
+      Role: 'arn:aws:iam::251353084235:role/startstop'
+      Events:
+        Schedule1:
+          Type: Schedule
+          Properties:
+            Schedule: cron(0 2 * * ? *)
