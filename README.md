@@ -39,6 +39,6 @@ docker run --restart "unless-stopped"
            -d quay.io/gl4di4torrr/chrisbolton:latest
 ```
 
-### Logical Architecture Diagram
+### Conceptual Architecture Diagram
 
 ![](img/chrisbolton_arch.png)
