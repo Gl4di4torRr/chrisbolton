@@ -30,7 +30,7 @@ This assumes you have created a certificate at `/etc/letsencrypt/live/thechrisbo
 `certbot`.
 
 ```
-docker run --restart "unless-stopped"
+docker run --restart "unless-stopped" \
 		   -p 80:80 \
            -p 443:443 \
            -v /etc/letsencrypt/live/thechrisbolton.com/:/etc/letsencrypt/live/thechrisbolton.com \
