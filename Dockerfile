@@ -1,4 +1,4 @@
-FROM nginx:stable
+FROM quay.io/gl4di4torrr/nginx:stable
 
 # Remove the default Nginx configuration file
 RUN rm -v /etc/nginx/nginx.conf
